@@ -1,4 +1,17 @@
-nav {
+.container  {
     font-family: 'Montserrat', sans-serif;
 
+}
+
+.nav-link,
+.navbar-brand {
+    color: black;
+}
+
+.nav-link:hover {
+    color:white;
+}
+
+.navbar-brand:hover {
+    color:black;
 }
