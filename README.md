@@ -18,3 +18,5 @@ Contact email address if you have additional questions: elizakennelly@gmail.com
 
 ## Link
 Here is a [link](https://ejkennelly.github.io/Portfolio/) to my responsive portfolio!
+
+![portfolio](assets/img/readme.png)
