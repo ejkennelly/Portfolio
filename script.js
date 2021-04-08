@@ -3,31 +3,12 @@
     * Copyright 2013-2020 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
     */
-require('dotenv').config();
-const nodemailer = require('nodemailer');
-const log = console.log;
-   let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL || "2girls1repo@gmail.com", 
-        pass: process.env.PASSWORD || "repository2suppository"
-    }
-});
-let mailOptions = {
-    from: 'abc@gmail.com', 
-    to: "2girls1repo@gmail.com",
-    subject: 'Nodemailer - Test',
-    text: 'Wooohooo it works!!'
-};
-transporter.sendMail(mailOptions, (err, data) => {
-    if (err) {
-        return log('Error occurs');
-    }
-    return log('Email sent!!!');
-});
+   
    (function ($) {
     "use strict"; // Start of use strict
+    const btn = document.getElementById('button');
 
+   
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
         if (
@@ -75,4 +56,22 @@ transporter.sendMail(mailOptions, (err, data) => {
     navbarCollapse();
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
+    document.getElementById('form')
+    .addEventListener('submit', function(event) {
+      event.preventDefault();
+   
+      btn.value = 'Sending...';
+   
+      const serviceID = 'default_service';
+      const templateID = 'contact_form';
+   
+      emailjs.sendForm(serviceID, templateID, this)
+       .then(() => {
+         btn.value = 'Send Email';
+         alert('Sent!');
+       }, (err) => {
+         btn.value = 'Send Email';
+         alert(JSON.stringify(err));
+       });
+   });
 })(jQuery); // End of use strict
