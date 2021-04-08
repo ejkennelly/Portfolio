@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/ejkennelly/responsivePortfolio/issues"
   },
-  "homepage": "https://github.com/ejkennelly/responsivePortfolio#readme"
+  "homepage": "https://github.com/ejkennelly/responsivePortfolio#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "emailjs-com": "^2.6.4",
+    "nodemailer": "^6.5.0"
+  }
 }

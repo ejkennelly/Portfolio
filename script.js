@@ -3,6 +3,28 @@
     * Copyright 2013-2020 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
     */
+require('dotenv').config();
+const nodemailer = require('nodemailer');
+const log = console.log;
+   let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL || "2girls1repo@gmail.com", 
+        pass: process.env.PASSWORD || "repository2suppository"
+    }
+});
+let mailOptions = {
+    from: 'abc@gmail.com', 
+    to: "2girls1repo@gmail.com",
+    subject: 'Nodemailer - Test',
+    text: 'Wooohooo it works!!'
+};
+transporter.sendMail(mailOptions, (err, data) => {
+    if (err) {
+        return log('Error occurs');
+    }
+    return log('Email sent!!!');
+});
    (function ($) {
     "use strict"; // Start of use strict
 
